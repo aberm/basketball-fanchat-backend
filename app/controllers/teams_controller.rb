@@ -2,7 +2,7 @@ class TeamsController < ApplicationController
 
   def index
     @teams = Team.all
-    render json: @teams
+    render json: @teams.to_json(only: [:id, :name, :logo])
   end
 
   def show
