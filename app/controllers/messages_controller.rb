@@ -15,6 +15,13 @@ class MessagesController < ApplicationController
     end
   end
 
+  def destroy
+    @message = Message.find(params[:id])
+    @message.destroy
+    # render body: nil, status: :no_content
+    # render status: 204
+  end
+
   private
 
   def message_params
